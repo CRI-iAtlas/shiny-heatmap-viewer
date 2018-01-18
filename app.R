@@ -1,10 +1,9 @@
 library(shiny)
 library(tidyverse)
-
-
+#install.packages("d3heatmap", "heatmaply")
+#devtools::install_github('neuhausi/canvasXpress')
 library(d3heatmap)
 library(heatmaply)
-#devtools::install_github('neuhausi/canvasXpress')
 library(canvasXpress)
 
 test_matrix <- matrix(
@@ -22,10 +21,10 @@ test_matrix <- matrix(
 
 ui <- basicPage(
     tabsetPanel(
-        tabPanel("d3heatmap", d3heatmapOutput("d3heatmap")),
-        tabPanel("heatmaply", plotlyOutput("heatmaply")),
-        tabPanel("plotly",    plotlyOutput("plotly")),
-        tabPanel("canvasXpress",    canvasXpressOutput("canvasXpress"))
+        tabPanel("d3heatmap",    d3heatmapOutput("d3heatmap")),
+        tabPanel("heatmaply",    plotlyOutput("heatmaply")),
+        tabPanel("plotly",       plotlyOutput("plotly")),
+        tabPanel("canvasXpress", canvasXpressOutput("canvasXpress"))
         ))
 
 
